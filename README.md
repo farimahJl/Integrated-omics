@@ -1,9 +1,5 @@
 # Integrated-omics
-
-TODO:
-- Example of codes which I used
-- Explain pipeline
-- Explain how i preprocessed data
+This README explains what I did for the project and what code I wrote. It will first give a general overview of the *pipeline*, will go over *preprocessing* shortly, and then goes into the code.
 
 # Pipeline
 A schematic overview can be seen in figure 1. The yellow symbol indicates user input, the red square indicates a process that is performed by the application, and the green symbol indicates visualization.
@@ -22,7 +18,7 @@ The pipeline works as follows:
 The user can interpret the plots and find the features that contribute most
 
 # Preprocess
-The data is preprocessed by using PCA. PCA is a dimensionality reduction technique that tries to explain most variance. 
+The data is preprocessed by using PCA (after scaling). PCA is a dimensionality reduction technique that tries to explain most variance. The data can also be preprocessed by using the *fillna* method to fill *NaN* values.
 
 # Code
 ## PCA
@@ -57,6 +53,18 @@ Advantages:
 
 Disadvantages:
 - Data should be scaled first, except coordinate data.
+
+## Fill NaN
+The code to fill *NaN* values can be found in `fillna.py`.
+
+The code fills *NaN* values in a DataFrame with the same value.
+
+Example usage:
+```python
+
+df = fillna(df_with_NaN, value)
+
+```
 
 ## Random Forest Classifier
 The Random Forest Classifier can be found in `rfc.py`.
