@@ -74,6 +74,19 @@ algorithm.evaluate_model(clf, cv)
 
 ```
 
+## XGBoost Classifier
+The XGBoost classifier can be found in `xgbc.py`. It is a tree boosting algorithm that performs very well. It is often the best performing machine learning model and is used frequently at competitions.
+
+This class uses the exact same layout as the Random Forest Classifier, as it also inherits `AlgorithmBaseClass`.
+
+Example usage:
+```python
+
+algorithm = XGBoostClassifier(X, y)
+clf, cv = algorithm.define_model()
+algorithm.evaluate_model(clf, cv)
+
+```
 
 ## Shapley plots
 By using the `Shap` class in `shapley.py` we can plot the shapley values. These can then be interpreted by the researchers. 
