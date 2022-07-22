@@ -58,4 +58,20 @@ Advantages:
 Disadvantages:
 - Data should be scaled first, except coordinate data.
 
-## 
+## Random Forest Classifier
+The Random Forest Classifier can be found in `rfc.py`.
+
+Used to classify labels, given a set of features. It is a ensemble learning method by creating multiple decision trees. The output is the label that is selected by most decision trees.
+
+It requires `features` and `labels`. It inherits from `AlgorithmBaseClass` which can be found on the original github.
+
+Example usage:
+```python
+
+algorithm = RF(X, y)
+clf, cv = algorithm.define_model()
+algorithm.evaluate_model(clf, cv)
+
+```
+
+
