@@ -15,8 +15,9 @@ The pipeline works as follows:
 2. Drop feature columns if specified.
 3. Choose taxanomy, such as *species*.
 4. Perform PCA.
-5. Perform shapely.
-6. Display plots to user.
+5. Train model.
+6. Perform shapely.
+7. Display plots to user.
 
 The user can interpret the plots and find the features that contribute most
 
@@ -25,3 +26,36 @@ The data is preprocessed by using PCA. PCA is a dimensionality reduction techniq
 
 # Code
 ## PCA
+The code for PCA can be found in `pca.py`.
+
+Pipeline:
+1. Define your features, *X*.
+2. Scale your features by using the `StandardScaler`.
+3. Use `pca` and it will return the principal components.
+
+The components can be used for further analysis, such as analyzing the loadings, or training model.
+
+The most important code is the following:
+
+```python
+
+def pca(x, n_components=2):
+    pca = PCA(n_components)
+    principalComponents = pca.fit_transform(x)
+    principalDf = pd.DataFrame(data = principalComponents
+                , columns = ['principal component 1', 'principal component 2'])
+    return principalDf
+
+```
+
+Example:
+
+`principalDf = pca(x, n_components=2)`
+
+Advantages:
+- If the algorithm cannot handle high dimensional data efficiently, we can reduce dimensions.
+
+Disadvantages:
+- Data should be scaled first, except coordinate data.
+
+## 
