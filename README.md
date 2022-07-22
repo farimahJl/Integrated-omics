@@ -1,5 +1,6 @@
 # Integrated-omics
 This README explains what I did for the project and what code I wrote. It will first give a general overview of the *pipeline*, will go over *preprocessing* shortly, and then goes into the code.
+for some parts of pca code I used (https://medium.com/search?q=pca)
 
 # Pipeline
 A schematic overview can be seen in figure 1. The yellow symbol indicates user input, the red square indicates a process that is performed by the application, and the green symbol indicates visualization.
