@@ -75,3 +75,21 @@ algorithm.evaluate_model(clf, cv)
 ```
 
 
+## Shapley plots
+By using the `Shap` class in `shapley.py` we can plot the shapley values. These can then be interpreted by the researchers. 
+
+The code was written by me and Hicham, but I'll only show my code.
+
+Example usage of my code:
+
+```python
+
+shap = Shap(X_train, model)
+shap.plot_waterfall(0)
+shap.plot_force()
+shap.plot_beeswarm()
+shap.plot_heatmap()
+shap.plot_scatter()
+
+```
+
